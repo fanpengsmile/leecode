@@ -21,3 +21,18 @@ function maxRain(arr) {
     }
     return rainSum;
 }
+
+
+function maxRain(arr) {
+    let sumRain = 0, leftIndex = arr[leftIndex], left = 0, rightIndex = arr.length - 1, right = arr[rightIndex];
+    while(left < right) {
+        if (left < right) {
+            leftIndex ++;
+            if (arr[leftIndex] < left) {
+                sumRain = sumRain + (left - arr[leftIndex]);
+            } else {
+                left = arr[leftIndex]
+            }
+        }
+    }
+}

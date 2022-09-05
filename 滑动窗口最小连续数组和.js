@@ -18,3 +18,28 @@ function inSubArrLen(target, nums) {
     }
     return res > len ? 0 : res;
 };
+
+
+function arrSum(arr) {
+    if (arr.length === 0) {
+        return 0;
+    } else {
+        return arr.reduce((a,b) => a + b);
+    }
+}
+
+function minLen(target, nums) {
+    let n = nums.length;
+    let left = 0,  right = 0, output = n + 1, arr = []
+    while (right < n) {
+        if (arrSum(arr) >= target) {
+            output = Math.min(output, arr.length);
+            left ++;
+            arr.shift();
+        } else {
+            arr.push(nums[right]);
+            right ++;
+        }
+    }
+    return output;
+}
